@@ -68,6 +68,7 @@ namespace JWTWebApi.Controllers
                 return Unauthorized("Token expired.");
             }
 
+            // Generates a new JWT token and refresh token.
             string token = CreateToken(user);
             var newRefreshToken = GenerateRefreshToken();
             SetRefreshToken(newRefreshToken);
